@@ -1,0 +1,48 @@
+NavigationLayout:
+    MDNavigationDrawer:
+        drawer_logo: "menu.png"
+        NavigationDrawerIconButton:
+            icon: "home"
+            text: "Inicio"
+            on_release: screen_manager.current = "screen1"
+
+        NavigationDrawerIconButton:
+            icon: "lock"
+            text: "Pagina 2"
+            on_release: screen_manager.current = "screen2"
+
+    BoxLayout:
+        orientation: "vertical"
+        MDToolbar:
+            title: "App"
+            md_bg_color: app.theme_cls.primary_color
+            left_action_items: [["menu", app.open_menu]]
+        ScreenManager:
+            id: screen_manager
+            Screen:
+                name: "screen1"
+                FloatLayout:
+                    MDLabel:
+                        text: "Screen 1"
+                        size_hint: (0.5, 0.1)
+                        pos_hint: {"center_x": 0.5, "center_y": 0.9}
+                        halign: "center"
+
+                    MDRoundFlatButton:
+                        text: "Imprimir"
+                        pos_hint: {"center_x": 0.5, "center_y": 0.8}
+                        on_release: app.imprimir("Screen 1")
+
+            Screen:
+                name: "screen2"
+                FloatLayout:
+                    MDLabel:
+                        text: "Screen 2"
+                        size_hint: (0.5, 0.1)
+                        pos_hint: {"center_x": 0.5, "center_y": 0.9}
+                        halign: "center"
+
+                    MDRoundFlatButton:
+                        text: "Imprimir"
+                        pos_hint: {"center_x": 0.5, "center_y": 0.8}
+                        on_release: app.imprimir("Screen 2")
