@@ -1,8 +1,8 @@
-from kivy.app import App
+from kivymd.app import MDApp
 from kivymd.theming import ThemeManager
 
 
-class Main(App):
+class Main(MDApp):
     theme_cls = ThemeManager()
 
     def open_menu(self, widget):
@@ -11,4 +11,5 @@ class Main(App):
     def imprimir(self, texto):
         print(texto)
 
-Main().run()
+if __name__ == "__main__":
+    Main().run()
