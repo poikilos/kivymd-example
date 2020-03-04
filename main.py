@@ -4,8 +4,10 @@ from kivymd.theming import ThemeManager
 from kivymd.theming import ThemableBehavior
 from kivymd.uix.list import MDList
 
+
 class ContentNavDrawer(ThemableBehavior, MDList):
     pass
+
 
 class Main(MDApp):
 
@@ -18,6 +20,7 @@ class Main(MDApp):
 
     def imprimir(self, texto):
         self.root.ids.nav_drawer.set_state("toggle")
+
 
 if __name__ == "__main__":
     Main().run()
